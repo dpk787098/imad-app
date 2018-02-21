@@ -78,8 +78,11 @@ function createTemplate(data){
     </html>
     `;
     return htmlTemplate;
-}    
+}   
 
+app.get('/' , function (req , res){
+   res.sendFile(path.join(__dirname, 'ul', 'index.html')); 
+});
 
 app.get('/:articleName', function (req, res) {
     //article == article-one
