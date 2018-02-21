@@ -42,7 +42,6 @@ var articles = {
     }
 };
   
-
 function createTemplate(data){
     var title=data.title;
     var date=data.date;
@@ -88,7 +87,7 @@ app.get('/:articleName', function (req, res) {
     //article == article-one
     //articles[articleName] == {} content object for article one
     var articleName = req.params.articleName;
-  res.send(createTemplate(articles[articleName]));
+    res.send(createTemplate(articles[articleName]));
 });
  
  
