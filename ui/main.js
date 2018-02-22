@@ -12,13 +12,13 @@ button.onclick = function () {
           //take some action      
           if(request.status === 200) {
               var counter = request.responseText;
-              var span = document.getElementById('count');
+              var span = document.getElementById("count");
               span.innerHTML = counter.toString();
-              
-          }
+            }
         }
         //not done yet
-      };
+    };
+    
     //make a request
     request.open('GET', 'http://deepak787098.imad.hasura-app.io/counter', true);
     request.send(null);
