@@ -17,7 +17,7 @@ button.onclick = function() {
             }
         }
         //not done yet
-    }
+    };
     
     //make a request
     request.open('GET', 'http://deepak787098.imad.hasura-app.io/counter', true);
