@@ -41,16 +41,6 @@ var articles = {
         </p>`
     }
 };
-
-var names = [];
-app.get('/submit-name', function(req, res) {
-    //get the name from request
-    var name = req.query.name;
-    
-    names.push(name);
-    //JSON: Javascript Object Notation
-    res.send(JSON.stringify(names));
-});
   
 function createTemplate(data){
     var title = data.title;
@@ -91,6 +81,16 @@ function createTemplate(data){
 
 app.get('/' , function (req , res) {
    res.sendFile(path.join(__dirname, 'ui', 'index.html')); 
+});
+
+var names = [];
+app.get('/submit-name', function(req, res) {
+    //get the name from request
+    var name = req.query.name;
+    
+    names.push(name);
+    //JSON: Javascript Object Notation
+    res.send(JSON.stringify(names));
 });
 
 var counter = 0;
