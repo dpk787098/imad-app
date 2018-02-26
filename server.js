@@ -42,11 +42,11 @@ var articles = {
     }
 };
   
-function createTemplate(data){
-    var title = data.title;
-    var date = data.date;
-    var heading = data.heading;
-    var content = data.content;
+function createTemplate(articles){
+    var title = arcticles.title;
+    var date = articles.date;
+    var heading = articles.heading;
+    var content = articles.content;
     
     var htmlTemplate=`
     <html>
