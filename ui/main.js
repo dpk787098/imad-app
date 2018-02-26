@@ -19,10 +19,11 @@ button.onclick = function() {
         //not done yet
     };
     
-    //make a request
+    //make the request
     request.open('GET', 'http://deepak787098.imad.hasura-app.io/counter', true);
     request.send(null);
 };
+
 //submit name
 var nameInput = document.getElementById('name');
 var name= nameInput.value;
