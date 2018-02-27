@@ -34,9 +34,9 @@ submit.onClick = function(){
    
     //capture the response and store it in a variable
     request.onreadystatechange = function(){
-        if (request.readyState === XMLHttpRequest.DONE){
+        if (request.readyState == XMLHttpRequest.DONE){
             //take some action
-            if(request.status === 200){
+            if(request.status == 200){
               //create a list of name and render it as a list
               var name = request.responseText;
               names=JSON.parse(names);
