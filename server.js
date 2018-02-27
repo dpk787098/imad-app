@@ -1,8 +1,8 @@
-var express=require('express');
-var morgan=require('morgan');
-var path=require('path');
+var express = require('express');
+var morgan = require('morgan');
+var path = require('path');
 
-var app=express();
+var app = express();
 app.use(morgan('combined'));
 
 var articles={
@@ -57,24 +57,25 @@ function createTemplate(data){
             <link href="/ui/style.css" rel="stylesheet" />
         </head>
         <body>
-        <div class="container">
-        <div>
-        <a href="/">Home</a>
-        </div>
-        <hr/>
-        <h3>
-            ${heading}
-        </h3>
-        <div>
-            ${date}
-        </div>
-        <div>
-            ${content}
-        </div>
-        </div>
+            <div class="container">
+            <div>
+                <a href="/">Home</a>
+            </div>
+            <hr/>
+            <h3>
+                ${heading}
+            </h3>
+            <div>
+                ${date}
+            </div>
+            <div>
+                ${content}
+            </div>
+            </div>
         </body>
-    </html>`;
-    return htmlTemplate;
+    </html>
+`;
+return htmlTemplate;
 }
 
 app.get('/', function(req, res) {
@@ -94,7 +95,7 @@ app.get('/submit-name', function(req, res) {
     
     names.push(name);
     //JSON: Javascript Object Notation
-    res.send(JSON.stringify(name));
+    res.send(JSON.stringify(names));
 }); 
 
 app.get('/:articleName', function(req, res) {
