@@ -1,59 +1,61 @@
-//Counter code
+//counter code
 var button = document.getElementById('counter');
 
-button.onclick = function () {
-    
-    //create a request object
+button.onClick = function(){
+   
+    //create a request
     var request = new XMLHttpRequest();
-    
+   
     //capture the response and store it in a variable
-    request.onreadystatechange = function () {
-        if (request.readyState == XMLHttpRequest.DONE) {
+    request.onreadystatechange = function(){
+        if (request.readyState === XMLHttpRequest.DONE){
             //take some action
-            if (request.status == 200) {
+            if(request.status === 200){
                 var counter = request.responseText;
                 var span = document.getElementById('count');
                 span.innerHTML = counter.toString();
             }
         }
-        //not done yet
     };
-    
-    //make the request
-    request.open('GET', 'http://deepak787098.imad.hasura-app.io/counter',true);
+   
+    //make a request
+    request.open('GET','http://hiteshgandhi1997.imad.hasura-app.io/counter',true);
     request.send(null);
 };
 
 //submit name
+
+
 var submit = document.getElementById('submit_btn');
-submit.onclick = function () {
-    
-     //create a request object
+submit.onClick = function(){
+  //make a request to the server and send the name
+   //create a request
     var request = new XMLHttpRequest();
-    
+   
     //capture the response and store it in a variable
-    request.onreadystatechange = function () {
-        if (request.readyState == XMLHttpRequest.DONE) {
+    request.onreadystatechange = function(){
+        if (request.readyState === XMLHttpRequest.DONE){
             //take some action
-            if (request.status == 200) {
-                //capture a list of names and render it as a list
-                var name = request.responseText;
-                names = JSON.parse(names);
-                var list = '';
-                for (var i=0; i< names.length; i++) {
-                    list += '<li>' + names[i] + '</li>';
-                }
-                var ul = document.getElementById('namelist');
-                ul.innerHTML = list;
-            } 
+            if(request.status === 200){
+              //create a list of name and render it as a list
+              var name = request.responseText;
+              names=JSON.parse(names);
+              var list = '';
+              for(var i=0 ; i<names.length;i++){
+                  list += '<li>'+names[i]+'<li>';
+              }
+              var ul = document.getElementById('nameList');
+              ul.innerHTML = list;  
+            }
         }
-        //not done yet
     };
-    
+   
     //make a request
-    var nameInput = document.getElementById('name');
+    var nameInput=document.getElementById('name');
     var name = nameInput.value;
-    request.open('GET', 'http://deepak787098.imad.hasura-app.io/submit=name?name=' +name,true);
+    request.open('GET','http://hiteshgandhi1997.imad.hasura-app.io/submit-name?name='+name,true);
     request.send(null);
-    
+  
+  
+ 
 };
