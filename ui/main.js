@@ -19,7 +19,7 @@ button.onClick = function(){
     };
    
     //make a request
-    request.open('GET','http://hiteshgandhi1997.imad.hasura-app.io/counter',true);
+    request.open('GET','http://http://deepak787098.imad.hasura-app.io//counter',true);
     request.send(null);
 };
 
@@ -53,7 +53,7 @@ submit.onClick = function(){
     //make a request
     var nameInput=document.getElementById('name');
     var name = nameInput.value;
-    request.open('GET','http://hiteshgandhi1997.imad.hasura-app.io/submit-name?name='+name,true);
+    request.open('GET','http://http://deepak787098.imad.hasura-app.io//submit-name?name='+name,true);
     request.send(null);
   
   
